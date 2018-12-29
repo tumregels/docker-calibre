@@ -1,0 +1,15 @@
+version: "3.4"
+
+services:
+  calibre:
+    build:
+      context: .
+      network: host
+    image: calibre
+    container_name: calibre_master
+    environment:
+     - DISPLAY=${DISPLAY}
+    volumes:
+     - .:/home/developer
+     - /tmp/.X11-unix:/tmp/.X11-unix
+     - ${HOME}/.Xauthority:/home/developer/.Xauthority
