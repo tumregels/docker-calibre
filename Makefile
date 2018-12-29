@@ -8,9 +8,9 @@ build:
 	docker build -t calibre .
 
 run:
-	docker run -it --rm -e DISPLAY=$(DISPLAY) \
+	docker run -it --rm -e DISPLAY=${DISPLAY} \
 	-v /tmp/.X11-unix:/tmp/.X11-unix \
-	-v $(HOME)/.Xauthority:$(HOME)/.Xauthority \
+	-v ${HOME}/.Xauthority:/root/.Xauthority \
 	--net=host calibre
 
 compose:
